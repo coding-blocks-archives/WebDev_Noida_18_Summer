@@ -1,0 +1,22 @@
+p {
+    color: green;
+}
+
+body {
+    font-size: 20px;
+}
+
+#specific {
+    color: red;
+}
+
+/*#notmain {*/
+    /*color: black;*/
+/*}*/
+.main {
+    color: orange;
+}
+
+.main.specific p {
+   color: black;
+}
