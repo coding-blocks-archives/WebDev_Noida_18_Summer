@@ -1,0 +1,9 @@
+.color-text {
+    color: blue;
+}
+
+@media screen and (max-width: 600px){
+    .color-text {
+        color: red;
+    }
+}
