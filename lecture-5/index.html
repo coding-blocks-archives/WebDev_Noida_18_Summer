@@ -14,20 +14,86 @@
             background-color: rosybrown;
             height: 200px;
         }
+        .box3 {
+            background-color: aquamarine;
+            height: 200px;
+        }
+        .box4 {
+            background-color: blanchedalmond;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
   <div class="container">
+     <header>
+         <ul class="nav">
+             <li class="nav-item">
+                 <a class="nav-link active" href="#">Active</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">Link</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">Link</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link disabled" href="#">Disabled</a>
+             </li>
+         </ul>
+     </header>
      <h1>Hello World</h1>
      <div class="jumbotron">
-         <p> Hello I am jumbo</p>
+         <div class="row">
+             <div class="col-md-4 col-sm-6 col-12">
+                 <div class="card" style="width: 18rem;">
+                     <img class="card-img-top" src="https://www.google.co.in/logos/doodles/2018/world-cup-2018-day-9-5987135852118016-5140178205147136-ssw.png" alt="Card image cap">
+                     <div class="card-body">
+                         <h5 class="card-title">Card title</h5>
+                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4 col-sm-6 col-12">
+                 <div class="card" style="width: 18rem;">
+                     <img class="card-img-top" src="https://www.google.co.in/logos/doodles/2018/world-cup-2018-day-9-5987135852118016-5140178205147136-ssw.png" alt="Card image cap">
+                     <div class="card-body">
+                         <h5 class="card-title">Card title</h5>
+                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4 col-sm-6 col-12">
+                 <div class="card" style="width: 18rem;">
+                     <img class="card-img-top" src="https://www.google.co.in/logos/doodles/2018/world-cup-2018-day-9-5987135852118016-5140178205147136-ssw.png" alt="Card image cap">
+                     <div class="card-body">
+                         <h5 class="card-title">Card title</h5>
+                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
      </div>
      <div class="row">
          <div class="box1 col-md-6 col-sm-2 col-8">
+             <div class="row">
+                 <div class="box3 col-md-6 col-6">
 
+                 </div>
+                 <div class="box4 col-md-6 col-6">
+
+                 </div>
+             </div>
          </div>
          <div class="box2 col-md-6 col-sm-10 col-4">
 
+             <div class="alert alert-primary" role="alert">
+                 A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+             </div>
          </div>
      </div>
   </div>
