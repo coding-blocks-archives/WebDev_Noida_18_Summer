@@ -8,6 +8,7 @@ window.onload = function () {
         let start = new Date().getTime()
         
         let N = +(newtask.value)
+        let contents = ""
         for (let i = 1; i <= N; i++) {
             let print = ""
             if (i%3 == 0) print += "fizz"
@@ -15,11 +16,10 @@ window.onload = function () {
 
             if (print == "") print = i
 
-            let item = document.createElement('li')
-            item.innerText = print
-            list.appendChild(item)
+            contents += "<li>" + print + "</li>"
 
         }
+        list.innerHTML = contents
         
 
         console.log(new Date().getTime() - start)
