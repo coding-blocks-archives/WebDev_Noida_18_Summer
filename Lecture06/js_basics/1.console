@@ -1,0 +1,29 @@
+15  script.js:3:1
+10 + 1
+11
+let x = 10
+SyntaxError: redeclaration of let x
+let p = 10
+undefined
+p
+10
+p + 2
+12
+typeof "asdasd"
+"string"
+typeof 10
+"number"
+p
+10
+p = "Sadasd"
+"Sadasd"
+p
+"Sadasd"
+p = k 
+ReferenceError: k is not defined [Learn More]
+p = 10 
+10
+let k = 0
+undefined
+k = 9
+9

@@ -1,0 +1,87 @@
+15  script.js:3:1
+1 + '1'
+"11"
+1 + 1 + '1'
+"21"
+'1' + 1 + 1
+"111"
+'1' - 1
+0
+'11' - 1
+10
+'11' - '1'
+10
+'' - 1
+-1
+'jgfdsf' - 1
+NaN
+typeof ('jgfdsf' - 1)
+"number"
+typeof NaN
+"number"
++'asd'
+NaN
+1 / 0
+Infinity
+-1 / 0
+-Infinity
+Infinity 
+Infinity
+Infinity + 1 
+Infinity
+Infinity - 1 
+Infinity
+let a = 10
+undefined
+a
+10
+2 * a == a + a 
+true
+2 * a === a + a 
+true
+a = Infinity
+Infinity
+2 * a === a + a 
+true
+2 * a === a 
+true
+Infinity + (-Infinity)
+NaN
+0.01 + 0.02
+0.03
+0.03 - 0.01
+0.019999999999999997
+0.02
+0.02
+0.01
+0.01
+0.02
+0.02
+0.03
+0.03
+let y = 0.01
+undefined
+y
+0.01
+0.01 + 0.02
+0.03
+Number.MAX_VALUE 
+1.7976931348623157e+308
+Number.MAX_SAFE_INTEGER
+9007199254740991
+Number.MAX_SAFE_INTEGER + 1
+9007199254740992
+Number.MAX_SAFE_INTEGER + 2
+9007199254740992
+Number.MAX_SAFE_INTEGER + 3
+9007199254740994
+Number.MAX_SAFE_INTEGER + 5
+9007199254740996
+Number.MAX_SAFE_INTEGER + 2
+9007199254740992
+Number.MAX_VALUE
+1.7976931348623157e+308
+Number.MAX_VALUE - 1
+1.7976931348623157e+308
+Number.MAX_VALUE - 1000
+1.7976931348623157e+308

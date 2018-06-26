@@ -1,0 +1,53 @@
+15  script.js:3:1
+typeof "asdasd"
+"string"
+typeof 'a'
+"string"
+typeof 'aadfdsf'
+"string"
+typeof `sdfdsf`
+"string"
+'asdsad' 
+"asdsad"
+1
+1
+'asdsad' 
+"asdsad"
+`asdsad` 
+"asdsad"
+typeof 10
+"number"
+typeof 10.6
+"number"
+Number.MAX_SAFE_INTEGER 
+9007199254740991
+Number.MIN_SAFE_INTEGER 
+-9007199254740991
+Number.MAX_VALUE
+1.7976931348623157e+308
+typeof true
+"boolean"
+typeof false
+"boolean"
+typeof [1,2,3]
+"object"
+typeof null
+"object"
+typeof undefined 
+"undefined"
+let p = r
+ReferenceError: r is not defined [Learn More]
+p
+undefined
+let e; 
+undefined
+e
+undefined
+e
+undefined
+e = null
+null
+e
+null
+e
+null
