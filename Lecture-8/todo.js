@@ -6,10 +6,11 @@ window.onload = function() {
     let input = document.getElementById('inp');
     let output = document.getElementById('result');
     let value = "";
-    var todoList = [];
+    let todoList = [];
     button.onclick = function () {
         value = `<li>${input.value}</li>`;
         todoList.push(value);
+        console.log(this)
         display();
     };
 
