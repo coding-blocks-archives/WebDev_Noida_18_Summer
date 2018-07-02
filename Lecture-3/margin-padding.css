@@ -1,0 +1,17 @@
+.box {
+    width: 33%;
+    height:200px;
+    border: 1px dashed palevioletred;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.small-box {
+    width: calc(33% - 20px);
+    margin: 2%;
+}
