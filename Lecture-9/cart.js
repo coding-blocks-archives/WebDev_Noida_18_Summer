@@ -12,7 +12,7 @@ $(document).ready(function(){
                    <li>
                        <input type="hidden">
                        <span onclick="changeType(this)">${inp.val()}</span>
-                        <button onclick="updateEle(this)">Update</button>
+                        <button onclick="updateEle(this)" id=${todoList.length}>Update</button>
                        <button onclick="deleteEle(this)">Delete</button>
                    </li>`;
         todoList.push(value);
@@ -26,6 +26,7 @@ function deleteEle(ele) {
 }
 
 function updateEle(ele) {
+  console.log(ele.id);
   let parent = $(ele).prev();
   let grandparent = parent.prev();
   let valInput = grandparent.val();
