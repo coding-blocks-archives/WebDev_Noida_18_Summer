@@ -18,6 +18,13 @@ app.get('/add', function(req,res) {
     res.send(todo);
 });
 
+app.get('/delete', function(req,res){
+   let index = req.query.id;
+   todoList.splice(index,1);
+   res.sendStatus(200);
+
+});
+
 app.get('/display', function(req,res) {
    // Send TodoList Array to the client
     res.send(todoList);

@@ -18,7 +18,11 @@ $(document).ready(function(){
             method: 'GET',
             data: {todo: inp.val()},
             success: function(data) {
-                result.append(`<li>${data}</li>`)
+                result.append(`<li>
+                              <span>${data}</span>
+                              <button onclick="deleteKey(this)">Delete</button>
+                              </li>`
+                )
                 // Append TodoList Item on Page
             }
         })
@@ -31,14 +35,34 @@ $(document).ready(function(){
             method: 'GET',
             success: function(data) {
                 data.forEach(function(i){
-                    result.append(`<li>${i}</li>`)
+                    result.append(`<li>
+                              <span>${i}</span>
+                              <button onclick="deleteKey(this)">Delete</button>
+                              </li>`)
                 })
             }
         })
 
     }
+
+
 });
 
+
+function deleteKey(element) {
+    let index = $(element).parent().index();
+
+
+    $.ajax({
+        url: '/delete',
+        method: 'GET',
+        data: {id: index},
+        success: function(data) {
+            $(element).parent().remove();
+        }
+    })
+
+}
 
 // Call the function at the top, display()
 
