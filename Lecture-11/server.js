@@ -28,10 +28,10 @@ app.get('/delete', function(req,res){
 app.get('/display', function(req,res) {
    // Send TodoList Array to the client
     res.send(todoList);
-})
+});
 
 
 app.listen(PORT, function(){
    console.log("Server running on Port " + PORT);
 
-})
+});
