@@ -9,6 +9,7 @@
   "author": "“aayusharora” <“aayush113002@gmail.com”>",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3"
+    "body-parser": "^1.18.3",
+    "mysql": "^2.15.0"
   }
 }

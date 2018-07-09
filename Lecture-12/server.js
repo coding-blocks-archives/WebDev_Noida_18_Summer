@@ -4,6 +4,7 @@
 const server = require('express');
 const app = server();
 const bodyParser = require('body-parser');
+const db = require('./database');
 // parse application/x-www-form-urlencoded
 app.use('/',server.static('public'));
 
@@ -35,4 +36,5 @@ app.get('/display', function(req,res) {
 
 app.listen(5000, function(req,res) {
    console.log("Server running on port 5000");
+   db.connectDb();
 });
