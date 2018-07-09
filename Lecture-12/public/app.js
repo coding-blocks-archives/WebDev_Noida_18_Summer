@@ -1,4 +1,4 @@
-
+var todoList = [];
 $(document).ready(function(){
     let inp = $('#inp');
     let result = $('#result');
@@ -24,11 +24,14 @@ $(document).ready(function(){
             data: {todo: test},
 
             success: function(data) {
+                todoList.push(data);
+                localStorage.setItem('todo', JSON.stringify(todoList));
                 result.append(`<li>
                               <span>${data.task}</span>
                               <button onclick="deleteKey(this)">Delete</button>
                               </li>`
                 )
+
                 // Append TodoList Item on Page
             }
         })
@@ -36,17 +39,34 @@ $(document).ready(function(){
     }
 
     function display(){
-        $.ajax({
-            url: '/display',
-            method: 'get',
-            success: function(data) {
-                data.forEach(function(i){
-                    result.append(`<li>
-                              <span>${i}</span>
+        let data = JSON.parse(localStorage.getItem('todo')) || [];
+        if(data.length) {
+           render(data);
+           todoList = data;
+        }
+        else {
+            $.ajax({
+                url: '/display',
+                method: 'get',
+                success: function(data) {
+                    localStorage.setItem('todo', JSON.stringify(data));
+                    render(data);
+                    todoList = data;
+                }
+            })
+
+
+        }
+
+
+    }
+
+    function render(data) {
+        data.forEach(function(i){
+            result.append(`<li>
+                              <span>${i.task}</span>
                               <button onclick="deleteKey(this)">Delete</button>
                               </li>`)
-                })
-            }
         })
 
     }
@@ -63,8 +83,11 @@ function deleteKey(element) {
         url: '/delete',
         method: 'post',
         data: {id: index},
-        success: function(data) {
+        success: function() {
+
             $(element).parent().remove();
+            todoList.splice(index, 1);
+            localStorage.setItem('todo', JSON.stringify(todoList));
         }
     })
 
