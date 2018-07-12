@@ -1,0 +1,19 @@
+$ mysql -u root -p
+Password:
+
+> create database somedatabase;
+> create user someuser identified by 'somepass';
+> grant all privileges on somedatabase.* to someuser;
+> flush privileges;
+> exit
+or
+> ^D
+
+$ mysql -u someuser -p
+Password: somepass
+
+> show databases
+> use somedatabase
+> create table courses (id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(30));
+> insert into courses(name) VALUES ('Launchpad');
+> select * from courses;
