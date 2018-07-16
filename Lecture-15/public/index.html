@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inp">
+<button id="btn">Get</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        var inp = $('#inp');
+        var btn = $('#btn');
+
+        btn.click(function(){
+            $.ajax({
+                  url: '/data',
+                  method: 'post',
+                  data: {color: inp.val()},
+                  success: function(data) {
+                      console.log(data);
+                      window.location.href='/all';
+                  }
+            })
+        })
+    })
+</script>
+</body>
+</html>
