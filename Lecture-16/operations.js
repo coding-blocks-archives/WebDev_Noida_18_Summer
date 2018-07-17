@@ -19,7 +19,14 @@ function encrypt(username, password, cb) {
 
 }
 
+function compare(password, hash, cb) {
+    bcrypt.compare(password, hash, function(err, res) {
+        cb(res);
+    });
+
+}
 
 module.exports = {
-    encrypt
+    encrypt,
+    compare
 }

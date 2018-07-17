@@ -1,0 +1,22 @@
+{
+  "name": "noida",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coding-blocks-archives/WebDev_Noida_18_Summer.git"
+  },
+  "author": "“aayusharora” <“aayush113002@gmail.com”>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coding-blocks-archives/WebDev_Noida_18_Summer/issues"
+  },
+  "homepage": "https://github.com/coding-blocks-archives/WebDev_Noida_18_Summer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3"
+  }
+}

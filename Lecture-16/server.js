@@ -32,14 +32,28 @@ app.post('/login', passport.authenticate('local',
 
 passport.use(new passportLocal(
              function(username, password, done) {
-               if(username !== db.username) {
-                   return done(null, false, {message: 'username is incorrect'});
-               }
-               if(password !== db.password) {
-                   return done(null, false, {message: 'password is incorrect'});
-               }
+              database.getUser(username, function(data) {
+                 console.log(data[0].password);
+                 console.log(data);
 
-               return done(null, db.id);
+                  if(username !== data[0].username) {
+                      return done(null, false, {message: 'username is incorrect'});
+                  }
+
+                  operations.compare(password, data[0].password, function(show){
+
+                      if(!show) {
+                          return done(null, false, {message: 'password is incorrect'});
+                      }
+
+
+
+                      return done(null, data[0].username);
+
+
+                  });
+
+              })
 
              })
 );
@@ -49,9 +63,9 @@ passport.serializeUser(function(id, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-    if(id === db.id) {
-        return done(null, db.username)
-    }
+
+        return done(null, id)
+
 
 });
 
