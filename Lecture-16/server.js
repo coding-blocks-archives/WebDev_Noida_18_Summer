@@ -9,6 +9,8 @@ const passportLocal = require('passport-local').Strategy;
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const db = require('./dbconfig.json');
+const database = require('./database');
+const operations = require('./operations');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -60,6 +62,7 @@ app.get('/success', function(req,res) {
 });
 
 app.get('/failure', function(req,res) {
+    req.logout();
     res.redirect('/');
 
 });
@@ -74,7 +77,15 @@ app.get('/data', function(req, res) {
 
 });
 
+app.post('/signup', function(req, res) {
+
+    operations.encrypt(req.body.username, req.body.password, function(data){
+        res.send(data);
+
+    })
+});
+
 app.listen(5000, function(req,res) {
     console.log("Port listening on 5000")
-
+    database.connectDb();
 })
