@@ -17,14 +17,17 @@ function Connection() {
 function Insertdocs(cb) {
     const collection = shopping.collection('documents');
     collection.insertMany([
-        {a:1},
-        {b:1},
-        {c:1}
-    ], function(err, result) {
-       findDocs(function(data) {
-           cb(data)
 
-       })
+    ], function(err, result) {
+
+        update(function(data) {
+            findDocs(function(data) {
+                cb(data)
+
+            });
+
+        })
+
 
     })
 
@@ -35,6 +38,17 @@ function findDocs(cb) {
     collection.find({}).toArray(function(err, result) {
        cb(result)
 
+    })
+
+}
+
+function update(cb) {
+    const collection = shopping.collection('documents');
+    collection.update({a:1},
+        {$set: {a:9}}, function(err, result) {
+
+
+         cb(result);
     })
 
 }
